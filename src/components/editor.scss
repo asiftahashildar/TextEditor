@@ -1,0 +1,45 @@
+@mixin common($disProp, $alignProp, $justifyProp, $flexDirProp:'row'){
+    display: $disProp;
+    align-items: $alignProp;
+    justify-content: $justifyProp;
+    flex-direction: $flexDirProp;
+}
+
+$fontwt : 600;
+
+.container{
+    @include common(flex, center, flex-Start, column);
+    padding: 0;
+    margin: 0;
+    width: 99vw;
+    height: 97vh;
+    .header--box{
+        @include common(flex, center, center, row);
+        width: 85%;
+        height: 10%;
+        padding-top: 1rem;
+        .main--heading{
+            width: 92%;
+            font-weight: $fontwt;
+        }
+        .header--btn{
+            @include common(flex, center, center, row);
+            width: 8%;
+            .btn{
+                width: 55%;
+                height: 25%;
+                padding: 5px;
+                border: 2px solid rgb(19, 18, 18);
+                font-weight: $fontwt;
+                cursor: pointer;
+            }
+        }
+    }
+    .input--box{
+        border: 2px solid #7AB2D3;
+        width: 85%;
+        height: 100%;
+        margin-top: 5px;
+        padding-top: 10px;
+    }
+}
